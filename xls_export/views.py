@@ -3,7 +3,7 @@ import xlwt
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 
-def export_users_xls(request):
+def export_robots_xls(request):
     response = HttpResponse(content_type='application/ms-excel')
     response['Content-Disposition'] = 'attachment; filename="users.xls"'
 

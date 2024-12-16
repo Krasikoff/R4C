@@ -27,7 +27,7 @@ def send_email_to_customer(customer_email, robot):
         'Добрый день! По Вашему заказу...',
         text_content,
         'from@example.com',
-        [customer_email,],
+        [customer_email.rstrip(),],
     )
     try:
         email.send()

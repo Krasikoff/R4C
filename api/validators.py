@@ -13,7 +13,6 @@ def validate_body(body):
 
 
 def validate_len(key, body):
-    print(len(body[key]))
     if key in ['model', 'version']:
         if len(body[key]) != 2:
             raise BadRequest(f'Check length in "{key}" data, please.')

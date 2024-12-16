@@ -2,6 +2,8 @@ from django.http import JsonResponse
 from django.http import HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
 import json
+from datetime import datetime
+from django.utils import timezone
 
 from robots.models import Robot
 from .validators import validate_body
@@ -16,6 +18,7 @@ def index(request):
         except ValueError as e:
             raise HttpResponseBadRequest(e)
         validate_body(body)
+        body['created'] = timezone.make_aware(datetime.strptime(f'{body["created"]}', "%Y-%m-%d %H:%M:%S"))
         body['serial'] = f'{body["model"]}-{body["version"]}'
         robot = Robot(**body)
         robot.save()

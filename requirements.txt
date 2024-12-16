@@ -1,3 +1,4 @@
+APScheduler==3.11.0
 asgiref==3.8.1
 Django==5.1.4
 django-cors-headers==4.6.0
@@ -8,3 +9,4 @@ pycodestyle==2.12.1
 pyflakes==3.2.0
 sqlparse==0.5.3
 typing_extensions==4.12.2
+tzlocal==5.2

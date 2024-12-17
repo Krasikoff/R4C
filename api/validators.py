@@ -1,4 +1,5 @@
 import datetime
+
 from django.core.exceptions import BadRequest
 
 
@@ -33,4 +34,4 @@ def validate_datetime(key, body):
     try:
         datetime.datetime.strptime(body[key], '%Y-%m-%d %H:%M:%S')
     except Exception as e:
-        raise BadRequest(f'Check format in "{key}" data, please.')
+        raise BadRequest(f'Check format in "{key}" data, please.{e}')

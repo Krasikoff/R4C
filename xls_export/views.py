@@ -10,7 +10,6 @@ from robots.models import Robot
 
 def export_robots_xls(request):
     """Экспорт в Exel произведенных за прошлую неделю роботов."""
-
     response = HttpResponse(content_type='application/ms-excel')
     response['Content-Disposition'] = (
         'attachment; filename="Last_Week_Made_Robots.xls"'

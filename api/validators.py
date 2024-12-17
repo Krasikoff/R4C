@@ -14,6 +14,7 @@ def validate_body(body):
 
 
 def validate_len(key, body):
+    """Валидация длины входящих полей."""
     if key in ['model', 'version']:
         if len(body[key]) != 2:
             raise BadRequest(f'Check length in "{key}" data, please.')
@@ -25,12 +26,14 @@ def validate_len(key, body):
 
 
 def validate_symbol(key, body):
+    """Валидация разрешенных символов."""
     if key in ['model', 'version']:
         if not body[key].isalnum():
             raise BadRequest(f'Check symbol in "{key}" data, please.')
 
 
 def validate_datetime(key, body):
+    """Валидация формата даты, времени."""
     try:
         datetime.datetime.strptime(body[key], '%Y-%m-%d %H:%M:%S')
     except Exception as e:

@@ -12,6 +12,7 @@ from .validators import validate_body
 
 @csrf_exempt
 def index(request):
+    """Эндпоинт добавления робота."""
     if request.method == 'POST':
         body_unicode = request.body.decode('utf-8')
         try:

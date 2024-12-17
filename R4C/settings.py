@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'mailing_control.apps.MailingControlConfig',
     'scheduler.apps.SchedulerConfig',
     'django.contrib.admin',
     'django.contrib.auth',

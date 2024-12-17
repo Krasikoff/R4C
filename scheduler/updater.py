@@ -1,5 +1,6 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from .update import check_robot_serial_for_email
+
+from mailing_control.update import check_robot_serial_for_email
 
 
 def start():
